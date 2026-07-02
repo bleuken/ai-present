@@ -1,0 +1,88 @@
+[     888ms] [LOG] QuickStart: ⚙️ Runtime config {
+  "logLevel": "debug"
+} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     890ms] [LOG] QuickStart: 🔧 init handler @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     890ms] [LOG] QuickStart: 🟠 Some configured content properties were not found on this page: Article Tag. Note: This is expected on homepages or section pages without article content. @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     890ms] [LOG] QuickStart: Content Properties Found
+
+ @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     890ms] [LOG] QuickStart: 🔧 handleContentProperties handler {} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     902ms] [LOG] QuickStart: 🧪 Experiment {
+  "experimentId": "pw:article:test5_ab",
+  "assignedGroup": "variant"
+} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     902ms] [LOG] QuickStart: 🔧 Model inputs {todayPageViews: 0, todayPageViewsByArticle: 0, todayPageViewsByArticleWithPaywall: 0, todayPageViewsByArticleWithRegwall: 0, todayTopLevelSections: 0} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     903ms] [LOG] QuickStart: 🔧 Model output {paywall: 0.4026197365694702, regwall: 0.4026197365694702} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     904ms] [LOG] QuickStart: 🔧 Base decision made: {id: 6befb2aa-0d3d-4120-9ed3-4a7e1e18186f, createdAt: 2026-07-01T14:29:25.047Z, trace: , context: DA00AA00AB00AC00BA00BB00BC00AD00AE00BD00BE00BF00AF00BG00CA00CB00CC00CD00CE00CF00CG00, inputs: HA:13|HB:2|FA:00|DC:03|DE:03|DF:00|DG:00|EA:Window…ia/Manila|GB:www.google.com|GC:search|GD:00|GE:00} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     904ms] [LOG] QuickStart: 🔧 Decision override: undefined @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     904ms] [LOG] QuickStart: 🔧 Policy decision {id: 6befb2aa-0d3d-4120-9ed3-4a7e1e18186f, createdAt: 2026-07-01T14:29:25.047Z, trace: b124040d004042, context: DA00AA00AB00AC00BA00BB00BC00AD00AE00BD00BE00BF00AF00BG00CA00CB00CC00CD00CE00CF00CG00, inputs: HA:13|HB:2|FA:00|DC:03|DE:03|DF:00|DG:00|EA:Window…ia/Manila|GB:www.google.com|GC:search|GD:00|GE:00} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     905ms] [LOG] QuickStart: 🧮 Received getDecision event {visitor: anonymous} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     905ms] [LOG] QuickStart: 🔧 getDecision event handler @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     906ms] [LOG] QuickStart: 🔧 Decision override: undefined @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     906ms] [LOG] QuickStart: 🔧 Policy decision {id: 6befb2aa-0d3d-4120-9ed3-4a7e1e18186f, createdAt: 2026-07-01T14:29:25.047Z, trace: b124040d004042, context: DA00AA00AB00AC00BA00BB00BC00AD00AE00BD00BE00BF00AF00BG00CA00CB00CC00CD00CE00CF00CG00, inputs: HA:13|HB:2|FA:00|DC:03|DE:03|DF:00|DG:00|EA:Window…ia/Manila|GB:www.google.com|GC:search|GD:00|GE:00} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     907ms] [LOG] QuickStart: 🪧 Decision: regwall @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[     964ms] [WARNING] [GPT] PubAdsService.getTargeting is deprecated, use googletag.getConfig('targeting') instead.
+https://goo.gle/gpt-message#200 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606250101/pubads_impl.js?cb=31099403:18
+[    1194ms] [WARNING] adgb - not initialized. @ https://cdn.taboola.com/libtrc/slate1-network/loader.js:0
+[    1348ms] [WARNING] [GPT] Slot.setTargeting is deprecated, use Slot.setConfig({targeting: ...}) instead.
+https://goo.gle/gpt-message#171 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606250101/pubads_impl.js?cb=31099403:18
+[    1572ms] [WARNING] Placements With no Content: Below Article Thumbnails | Card 5 @ https://cdn.taboola.com/libtrc/slate1-network/loader.js:0
+[    1574ms] [WARNING] Placements With no Content: Below Article Thumbnails | Card 5 @ https://cdn.taboola.com/libtrc/slate1-network/loader.js:0
+[    1683ms] [ERROR] Failed to load resource: the server responded with a status of 451 () @ https://api.rlcdn.com/api/identity/envelope?pid=13468:0
+[    1858ms] [WARNING] Placements With no Content: Below Article Thumbnails | Lazy Injected 1 @ https://cdn.taboola.com/libtrc/slate1-network/loader.js:0
+[    1859ms] [WARNING] Placements With no Content: Below Article Thumbnails | Lazy Injected 1 @ https://cdn.taboola.com/libtrc/slate1-network/loader.js:0
+[    1937ms] [LOG] %c Everybody Else Segment  color: white; background-color: #2274A5 @ :2
+[    1939ms] [LOG] %c Everybody Else Segment  color: white; background-color: #2274A5 @ :2
+[    1941ms] [LOG] QuickStart: 🟠 User property 2 expected to be a number but got string, omitting. @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[    1943ms] [LOG] THIS IS THE PAYWALL STATUS {isPaywallDisplayed: true, isWarningDisplayed: false, paywallType: meterwall} @ https://slate.com/technology/2014/06/turing-test-reading-university-did-eugene-goostman-finally-make-the-grade.html:3603
+[    1952ms] [LOG] TP: Invalid containerSelector @ https://experience.piano.io/api/tinypass.min.js:0
+[    1953ms] [LOG] TP: widget has invalid selector ".in-article-recirc" @ https://experience.piano.io/api/tinypass.min.js:0
+[    2781ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    2896ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    3062ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    3066ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    3092ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    3126ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://tagan.adlightning.com/slate/op.js:0
+[    3195ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://tagan.adlightning.com/slate/op.js:0
+[    3239ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    3261ms] [LOG] QuickStart: 🧮 Received wall event {
+  "wallType": "regwall",
+  "section": "Technology"
+} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[    3261ms] [ERROR] FAILED amplitude.track RegWallShown {value: true, trace: b124040d004042, context: DA00AA00AB00AC00BA00BB00BC00AD00AE00BD00BE00BF00AF00BG00CA00CB00CC00CD00CE00CF00CG00, inputs: HA:13|HB:2|FA:00|DC:03|DE:03|DF:00|DG:00|EA:Window…ia/Manila|GB:www.google.com|GC:search|GD:00|GE:00, experimentsCode: pw:article:test5_ab=variant} Event skipped due to optOut config @ https://slate.com/technology/2014/06/turing-test-reading-university-did-eugene-goostman-finally-make-the-grade.html:3543
+[    3277ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://usersync.gumgum.com/usersync?b=sus&i=%%esc%%%%uid%%%%escend%%akUkV8Co8JwAAOpIzuIAAAAA:0
+[    3597ms] [LOG] QuickStart: 🧮 Received getDecision event {visitor: anonymous} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[    3598ms] [LOG] QuickStart: 🔧 getDecision event handler @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[    3601ms] [LOG] QuickStart: 🔧 Decision override: undefined @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[    3601ms] [LOG] QuickStart: 🔧 Policy decision {id: 6befb2aa-0d3d-4120-9ed3-4a7e1e18186f, createdAt: 2026-07-01T14:29:25.047Z, trace: b124040d004042, context: DA00AA00AB00AC00BA00BB00BC00AD00AE00BD00BE00BF00AF00BG00CA00CB00CC00CD00CE00CF00CG00, inputs: HA:13|HB:2|FA:00|DC:03|DE:03|DF:00|DG:00|EA:Window…ia/Manila|GB:www.google.com|GC:search|GD:00|GE:00} @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[    3601ms] [LOG] QuickStart: 🪧 Decision: regwall @ https://cdn.sophi.io/assets/demeter/1/stable/3253495344.js?isConsented=true:2
+[    3649ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    3653ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    3970ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://b1sync.zemanta.com/usersync/ogury/?gdpr=0&gdpr_consent=&cb=https%3A%2F%2Fms-cookie-sync.presage.io%2Fuser-sync%3Foutbrain_id%3D__ZUID__:0
+[    4119ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://s2s.atmtd.com/s2s/setuid?bidder=inmobi&gdpr=0&gdpr_consent=&gpp=&gpp_sid=&f=i&uid=ID5-1-e63a68fc-372b-4b55-a805-5f9c1e6706e7:0
+[    4119ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://s2s.atmtd.com/s2s/setuid?bidder=inmobi&gdpr=0&gdpr_consent=&gpp=&gpp_sid=&f=i&uid=ID5-1-e63a68fc-372b-4b55-a805-5f9c1e6706e7:0
+[    3277ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://usersync.gumgum.com/usersync?b=sus&i=%%esc%%%%uid%%%%escend%%akUkV8Co8JwAAOpIzuIAAAAA:0
+[    3970ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://b1sync.zemanta.com/usersync/ogury/?gdpr=0&gdpr_consent=&cb=https%3A%2F%2Fms-cookie-sync.presage.io%2Fuser-sync%3Foutbrain_id%3D__ZUID__:0
+[    7044ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ad.360yield.com/server_match?partner_id=1805&gdpr=0&gdpr_consent=&r=https%3A%2F%2Fmeasureadv.com%2FuserBack%3Fuid%3D%7BPUB_USER_ID%7D%26p%3D3:0
+[    7332ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://tracker-shr.ortb.net/sync?id=1&uid=ID5-1-e63a68fc-372b-4b55-a805-5f9c1e6706e7:0
+[    7651ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    7731ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    8437ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    4119ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://s2s.atmtd.com/s2s/setuid?bidder=inmobi&gdpr=0&gdpr_consent=&gpp=&gpp_sid=&f=i&uid=ID5-1-e63a68fc-372b-4b55-a805-5f9c1e6706e7:0
+[    7044ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ad.360yield.com/server_match?partner_id=1805&gdpr=0&gdpr_consent=&r=https%3A%2F%2Fmeasureadv.com%2FuserBack%3Fuid%3D%7BPUB_USER_ID%7D%26p%3D3:0
+[    7332ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://tracker-shr.ortb.net/sync?id=1&uid=ID5-1-e63a68fc-372b-4b55-a805-5f9c1e6706e7:0
+[    3277ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://usersync.gumgum.com/usersync?b=sus&i=%%esc%%%%uid%%%%escend%%akUkV8Co8JwAAOpIzuIAAAAA:0
+[    3970ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://b1sync.zemanta.com/usersync/ogury/?gdpr=0&gdpr_consent=&cb=https%3A%2F%2Fms-cookie-sync.presage.io%2Fuser-sync%3Foutbrain_id%3D__ZUID__:0
+[    4119ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://s2s.atmtd.com/s2s/setuid?bidder=inmobi&gdpr=0&gdpr_consent=&gpp=&gpp_sid=&f=i&uid=ID5-1-e63a68fc-372b-4b55-a805-5f9c1e6706e7:0
+[    7044ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ad.360yield.com/server_match?partner_id=1805&gdpr=0&gdpr_consent=&r=https%3A%2F%2Fmeasureadv.com%2FuserBack%3Fuid%3D%7BPUB_USER_ID%7D%26p%3D3:0
+[    7332ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://tracker-shr.ortb.net/sync?id=1&uid=ID5-1-e63a68fc-372b-4b55-a805-5f9c1e6706e7:0
+[    9803ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://cs.nex8.net/cs/openx:0
+[    9803ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://cs.nex8.net/cs/openx:0
+[   17632ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://dps.jp.cinarra.com/pxd?PLATFORM_ID=1&USER_ID=3dd4a0b0-b37f-8478-d6e7-f2038563a3f6:0
+[    3277ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://usersync.gumgum.com/usersync?b=sus&i=%%esc%%%%uid%%%%escend%%akUkV8Co8JwAAOpIzuIAAAAA:0
+[    3970ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://b1sync.zemanta.com/usersync/ogury/?gdpr=0&gdpr_consent=&cb=https%3A%2F%2Fms-cookie-sync.presage.io%2Fuser-sync%3Foutbrain_id%3D__ZUID__:0
+[   38423ms] [LOG] received a request for uspapi @ https://cdn.cookielaw.org/opt-out/otCCPAiab.js:95
+[    3277ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://usersync.gumgum.com/usersync?b=sus&i=%%esc%%%%uid%%%%escend%%akUkV8Co8JwAAOpIzuIAAAAA:0
+[    3970ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://b1sync.zemanta.com/usersync/ogury/?gdpr=0&gdpr_consent=&cb=https%3A%2F%2Fms-cookie-sync.presage.io%2Fuser-sync%3Foutbrain_id%3D__ZUID__:0
+[   41268ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://csync.loopme.me/?redirect=https%3A%2F%2Fid5-sync.com%2Fc%2F464%2F821%2F2%2F6.gif%3Fpuid%3D%7Bdevice_id%7D%26gdpr%3D0%26gdpr_consent%3D:0
+[   44270ms] [WARNING] The resource https://compote.slate.com/images/784c95e0-1b24-42d6-81ce-e74080897aa1.jpg?width=1280 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://slate.com/technology/2014/06/turing-test-reading-university-did-eugene-goostman-finally-make-the-grade.html:0

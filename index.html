@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#05060a" />
+  <meta name="description" content="Artificial Intelligence: The Brain of Modern Technology. A cinematic interactive experience exploring how AI is transforming industries, empowering people, and shaping the future." />
+  <meta name="keywords" content="Artificial Intelligence, AI, Machine Learning, Deep Learning, Neural Networks, Future Technology" />
+  <meta name="author" content="AI Educational Experience" />
+  <meta property="og:title" content="Artificial Intelligence: The Brain of Modern Technology" />
+  <meta property="og:description" content="Discover how AI is transforming industries, empowering people, and shaping the future." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='14' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%2305060a'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ffffff'/%3E%3C/svg%3E" />
+
+  <title>Artificial Intelligence — The Brain of Modern Technology</title>
+
+  <!-- Fonts: Inter Variable with OpenType features -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Libraries: GSAP, ScrollTrigger, Lenis, Three.js, Vanilla Tilt -->
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+</head>
+<body>
+  <!-- ============================================== -->
+  <!--  AMBIENT LAYER: aurora, particles, mesh        -->
+  <!-- ============================================== -->
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="aurora aurora--1"></div>
+    <div class="aurora aurora--2"></div>
+    <div class="aurora aurora--3"></div>
+    <div class="aurora aurora--4"></div>
+    <div class="mesh-gradient"></div>
+    <div class="grain"></div>
+    <canvas id="particles-canvas" class="particles-canvas"></canvas>
+  </div>
+
+  <!-- ============================================== -->
+  <!--  PROGRESS BAR                                   -->
+  <!-- ============================================== -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollProgress"></div>
+  </div>
+
+  <!-- ============================================== -->
+  <!--  FLOATING GLASS NAVIGATION                      -->
+  <!-- ============================================== -->
+  <header class="nav-shell" role="banner">
+    <nav class="nav-pill" aria-label="Primary">
+      <a href="#hero" class="nav-brand" aria-label="AI Home">
+        <span class="nav-brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+            <defs>
+              <linearGradient id="navg" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366f1" />
+                <stop offset="1" stop-color="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <circle cx="12" cy="12" r="10" stroke="url(#navg)" stroke-width="1.5" />
+            <circle cx="12" cy="12" r="3" fill="url(#navg)" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2" stroke="url(#navg)" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="nav-brand__text">AI</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#what-is-ai" class="nav-link">About</a></li>
+        <li><a href="#how-ai-works" class="nav-link">Process</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#applications" class="nav-link">Impact</a></li>
+        <li><a href="#timeline" class="nav-link">Timeline</a></li>
+      </ul>
+
+      <a href="#hero" class="nav-cta">
+        <span>Begin</span>
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+      <a href="#hero">Home</a>
+      <a href="#what-is-ai">About</a>
+      <a href="#how-ai-works">Process</a>
+      <a href="#features">Features</a>
+      <a href="#applications">Impact</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#challenges">Challenges</a>
+      <a href="#around-us">Around Us</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#future">Future</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================== -->
+    <!--  HERO SECTION                                   -->
+    <!-- ============================================== -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <div class="hero__canvas" id="heroBrain" aria-hidden="true"></div>
+
+      <!-- AI Brain photo backdrop (behind 3D brain) -->
+      <picture class="hero__photo" aria-hidden="true">
+        <source type="image/webp" srcset="assets/photos/section-1-960.webp 960w, assets/photos/section-1-1920.webp 1920w" sizes="100vw" />
+        <img src="assets/photos/section-1-1920.jpg" alt="" loading="eager" decoding="async" />
+      </picture>
+
+      <div class="hero__content">
+        <div class="hero__eyebrow reveal" data-reveal>
+          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+          <span>GROUP 1: B
+A
+G
+U
+Y
+O
+,
+F
+E
+L
+I
+X
+B
+E
+R
+T
+O
+J
+R
+.
+|
+A
+L
+I
+M
+A
+N
+-
+G
+O
+,
+M
+A
+.
+S
+I
+E
+M
+A
+E
+|
+
+A
+N
+D
+R
+A
+D
+E
+,
+J
+O
+M
+A
+N
+U
+E
+L
+
+</span>
+        </div>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line reveal-line" data-reveal-line>
+            <span class="hero__title-word">Artificial</span>
+          </span>
+          <span class="hero__title-line reveal-line" data-reveal-line>
+            <span class="hero__title-word hero__title-word--gradient">Intelligence</span>
+          </span>
+        </h1>
+
+        <p class="hero__subtitle reveal" data-reveal>
+          The Brain Behind Modern Technology
+        </p>
+
+        <p class="hero__description reveal" data-reveal>
+          Discover how AI is transforming industries, empowering people,
+          and shaping the future of human possibility.
+        </p>
+
+        <div class="hero__actions reveal" data-reveal>
+          <a href="#what-is-ai" class="btn btn--primary">
+            <span>Start the Journey</span>
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
+              <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#features" class="btn btn--ghost">
+            <span>Explore Features</span>
+          </a>
+        </div>
+
+        <div class="hero__stats reveal" data-reveal>
+          <div class="hero__stat">
+            <div class="hero__stat-value" data-counter="2.5" data-suffix="QT">0</div>
+            <div class="hero__stat-label">Bytes generated daily</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-value" data-counter="97" data-suffix="%">0</div>
+            <div class="hero__stat-label">Accuracy in tasks</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-value" data-counter="40" data-suffix="%">0</div>
+            <div class="hero__stat-label">Productivity boost</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#what-is-ai" class="hero__scroll" aria-label="Scroll to content">
+        <span class="hero__scroll-label">Scroll</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  WHAT IS ARTIFICIAL INTELLIGENCE                -->
+    <!-- ============================================== -->
+    <section id="what-is-ai" class="section section--dark" aria-labelledby="what-is-ai-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal>The Foundation</p>
+          <h2 id="what-is-ai-title" class="section__title reveal" data-reveal>
+            What is <span class="gradient-text">Artificial Intelligence</span>?
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            A branch of computer science that enables machines to imitate human
+            intelligence — learning from data, recognizing patterns, solving
+            problems, understanding language, and making decisions with minimal
+            human intervention.
+          </p>
+        </header>
+
+        <div class="concept-grid">
+          <article class="concept-card glass-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15">
+            <div class="concept-card__icon concept-card__icon--photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/section-2a-960.webp 960w, assets/photos/section-2a-1920.webp 1920w" sizes="120px" />
+                <img src="assets/photos/section-2a-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3 class="concept-card__title">Human Brain</h3>
+            <p class="concept-card__text">
+              The original inspiration. 86 billion neurons firing in patterns
+              to create thought, memory, and consciousness.
+            </p>
+            <div class="concept-card__chip">Inspiration</div>
+          </article>
+
+          <article class="concept-card glass-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15">
+            <div class="concept-card__icon concept-card__icon--photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/section-2b-960.webp 960w, assets/photos/section-2b-1920.webp 1920w" sizes="120px" />
+                <img src="assets/photos/section-2b-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3 class="concept-card__title">Neural Network</h3>
+            <p class="concept-card__text">
+              Mathematical layers of interconnected nodes that learn weighted
+              relationships from data — the digital echo of neurons.
+            </p>
+            <div class="concept-card__chip">Mechanism</div>
+          </article>
+
+          <article class="concept-card glass-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.15">
+            <div class="concept-card__icon concept-card__icon--photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/section-2c-960.webp 960w, assets/photos/section-2c-1920.webp 1920w" sizes="120px" />
+                <img src="assets/photos/section-2c-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3 class="concept-card__title">Computer Learning</h3>
+            <p class="concept-card__text">
+              Algorithms that adjust their internal parameters through exposure
+              to examples — getting better at a task without being told how.
+            </p>
+            <div class="concept-card__chip">Process</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  HOW AI WORKS — Animated flow diagram           -->
+    <!-- ============================================== -->
+    <section id="how-ai-works" class="section section--light" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal>The Pipeline</p>
+          <h2 id="how-title" class="section__title reveal" data-reveal>
+            How <span class="gradient-text">AI</span> Works
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            Every intelligent system follows the same fundamental flow —
+            from raw data to actionable decision. Watch the cycle unfold.
+          </p>
+        </header>
+
+        <!-- Cinematic panorama banner -->
+        <figure class="flow-banner reveal" data-reveal>
+          <picture>
+            <source type="image/webp" srcset="assets/photos/section-3-960.webp 960w, assets/photos/section-3-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 1100px" />
+            <img src="assets/photos/section-3-1920.jpg" alt="Luminous data streams converging into a network hub" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption>The flow of data, from raw signal to actionable decision.</figcaption>
+        </figure>
+
+        <div class="flow" id="aiFlow">
+          <div class="flow__line" aria-hidden="true">
+            <svg viewBox="0 0 4 600" preserveAspectRatio="none">
+              <line x1="2" y1="0" x2="2" y2="600" stroke="#6366f1" stroke-width="2" stroke-dasharray="8 6" />
+            </svg>
+          </div>
+
+          <ol class="flow__steps">
+            <li class="flow-step" data-step="1">
+              <div class="flow-step__num">01</div>
+              <div class="flow-step__body">
+                <h3 class="flow-step__title">Data</h3>
+                <p class="flow-step__text">
+                  Massive datasets — text, images, sensor readings, clickstreams —
+                  are gathered as the raw material intelligence is built from.
+                </p>
+                <div class="flow-step__visual flow-step__visual--photo" aria-hidden="true">
+                  <picture>
+                    <source type="image/webp" srcset="assets/photos/section-3a-960.webp 960w, assets/photos/section-3a-1920.webp 1920w" sizes="220px" />
+                    <img src="assets/photos/section-3a-1920.jpg" alt="" loading="lazy" decoding="async" />
+                  </picture>
+                </div>
+              </div>
+            </li>
+
+            <li class="flow-step" data-step="2">
+              <div class="flow-step__num">02</div>
+              <div class="flow-step__body">
+                <h3 class="flow-step__title">Learning</h3>
+                <p class="flow-step__text">
+                  Algorithms discover statistical patterns, edges, and structures
+                  hidden inside the data — extracting signal from noise.
+                </p>
+                <div class="flow-step__visual flow-step__visual--photo" aria-hidden="true">
+                  <picture>
+                    <source type="image/webp" srcset="assets/photos/section-3b-960.webp 960w, assets/photos/section-3b-1920.webp 1920w" sizes="220px" />
+                    <img src="assets/photos/section-3b-1920.jpg" alt="" loading="lazy" decoding="async" />
+                  </picture>
+                </div>
+              </div>
+            </li>
+
+            <li class="flow-step" data-step="3">
+              <div class="flow-step__num">03</div>
+              <div class="flow-step__body">
+                <h3 class="flow-step__title">Training</h3>
+                <p class="flow-step__text">
+                  The model iterates on millions of examples, adjusting internal
+                  weights through gradient descent until predictions stabilize.
+                </p>
+                <div class="flow-step__visual flow-step__visual--photo" aria-hidden="true">
+                  <picture>
+                    <source type="image/webp" srcset="assets/photos/section-3c-960.webp 960w, assets/photos/section-3c-1920.webp 1920w" sizes="220px" />
+                    <img src="assets/photos/section-3c-1920.jpg" alt="" loading="lazy" decoding="async" />
+                  </picture>
+                </div>
+              </div>
+            </li>
+
+            <li class="flow-step" data-step="4">
+              <div class="flow-step__num">04</div>
+              <div class="flow-step__body">
+                <h3 class="flow-step__title">Prediction</h3>
+                <p class="flow-step__text">
+                  Given new, unseen input, the trained model outputs its best
+                  estimate — a classification, score, or generated content.
+                </p>
+                <div class="flow-step__visual" aria-hidden="true">
+                  <svg viewBox="0 0 200 80" width="200" height="80" fill="none">
+                    <g>
+                      <circle cx="30" cy="40" r="8" stroke="#6366f1" stroke-width="1.5" fill="none" />
+                      <circle cx="70" cy="40" r="8" stroke="#6366f1" stroke-width="1.5" fill="none" />
+                      <circle cx="110" cy="40" r="8" stroke="#6366f1" stroke-width="1.5" fill="none" />
+                      <circle cx="150" cy="40" r="8" stroke="#6366f1" stroke-width="1.5" fill="none" />
+                      <circle cx="30" cy="40" r="3" fill="#6366f1" />
+                      <circle cx="70" cy="40" r="3" fill="#22d3ee" />
+                      <circle cx="110" cy="40" r="3" fill="#22d3ee" />
+                      <circle cx="150" cy="40" r="3" fill="#22d3ee" />
+                      <line x1="38" y1="40" x2="62" y2="40" stroke="#6366f1" stroke-width="1" stroke-dasharray="2 2" />
+                      <line x1="78" y1="40" x2="102" y2="40" stroke="#6366f1" stroke-width="1" stroke-dasharray="2 2" />
+                      <line x1="118" y1="40" x2="142" y2="40" stroke="#6366f1" stroke-width="1" stroke-dasharray="2 2" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </li>
+
+            <li class="flow-step" data-step="5">
+              <div class="flow-step__num">05</div>
+              <div class="flow-step__body">
+                <h3 class="flow-step__title">Decision</h3>
+                <p class="flow-step__text">
+                  The prediction becomes action — a recommendation, a medical
+                  diagnosis, an autonomous vehicle's next move, a generated
+                  paragraph, or a financial trade.
+                </p>
+                <div class="flow-step__visual" aria-hidden="true">
+                  <svg viewBox="0 0 200 80" width="200" height="80" fill="none">
+                    <path d="M100 18 L130 62 L70 62 Z" stroke="url(#fl-g3)" stroke-width="2" fill="rgba(99,102,241,0.1)" />
+                    <defs>
+                      <linearGradient id="fl-g3" x1="0" y1="0" x2="1" y2="1">
+                        <stop stop-color="#6366f1" />
+                        <stop offset="1" stop-color="#22d3ee" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="100" cy="48" r="6" fill="url(#fl-g3)" />
+                    <path d="M100 30 L100 42 M100 54 L100 60" stroke="#22d3ee" stroke-width="1" />
+                  </svg>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  KEY FEATURES — Glass cards                     -->
+    <!-- ============================================== -->
+    <section id="features" class="section section--dark" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal>Core Capabilities</p>
+          <h2 id="features-title" class="section__title reveal" data-reveal>
+            Key <span class="gradient-text">Features</span> of AI
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            Five interlocking capabilities that, together, give machines the
+            ability to perceive, reason, and create.
+          </p>
+        </header>
+
+        <div class="features-grid">
+          <article class="feature-card glass-card" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.1">
+            <div class="feature-card__index">01</div>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                <defs>
+                  <linearGradient id="f1-g" x1="0" y1="0" x2="48" y2="48">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <path d="M8 32c0-8 6-14 14-14s14 6 14 14" stroke="url(#f1-g)" stroke-width="2" fill="none" stroke-linecap="round" />
+                <circle cx="22" cy="32" r="3" fill="url(#f1-g)" />
+                <path d="M14 14l4 4M30 14l-4 4M22 8v4" stroke="url(#f1-g)" stroke-width="2" stroke-linecap="round" />
+                <path d="M8 40h28" stroke="url(#f1-g)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Machine Learning</h3>
+            <p class="feature-card__text">
+              Computers learn from experience and data, finding patterns and
+              improving at a task — without being explicitly programmed for
+              each scenario.
+            </p>
+            <div class="feature-card__tag">Learn from data</div>
+          </article>
+
+          <article class="feature-card glass-card" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.1">
+            <div class="feature-card__index">02</div>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                <defs>
+                  <linearGradient id="f2-g" x1="0" y1="0" x2="48" y2="48">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="14" r="3" fill="url(#f2-g)" />
+                <circle cx="12" cy="34" r="3" fill="url(#f2-g)" />
+                <circle cx="24" cy="8" r="3" fill="url(#f2-g)" />
+                <circle cx="24" cy="24" r="3" fill="url(#f2-g)" />
+                <circle cx="24" cy="40" r="3" fill="url(#f2-g)" />
+                <circle cx="36" cy="14" r="3" fill="url(#f2-g)" />
+                <circle cx="36" cy="34" r="3" fill="url(#f2-g)" />
+                <g stroke="url(#f2-g)" stroke-width="1" opacity="0.6">
+                  <line x1="12" y1="14" x2="24" y2="24" />
+                  <line x1="12" y1="14" x2="24" y2="8" />
+                  <line x1="12" y1="14" x2="24" y2="40" />
+                  <line x1="12" y1="34" x2="24" y2="8" />
+                  <line x1="12" y1="34" x2="24" y2="24" />
+                  <line x1="12" y1="34" x2="24" y2="40" />
+                  <line x1="24" y1="8" x2="36" y2="14" />
+                  <line x1="24" y1="8" x2="36" y2="34" />
+                  <line x1="24" y1="24" x2="36" y2="14" />
+                  <line x1="24" y1="24" x2="36" y2="34" />
+                  <line x1="24" y1="40" x2="36" y2="14" />
+                  <line x1="24" y1="40" x2="36" y2="34" />
+                </g>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Deep Learning</h3>
+            <p class="feature-card__text">
+              Multi-layer neural networks solve complex, high-dimensional
+              problems — recognizing faces, translating languages, generating
+              images — that classical algorithms cannot.
+            </p>
+            <div class="feature-card__tag">Layered cognition</div>
+          </article>
+
+          <article class="feature-card glass-card" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.1">
+            <div class="feature-card__index">03</div>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                <defs>
+                  <linearGradient id="f3-g" x1="0" y1="0" x2="48" y2="48">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <path d="M8 14c0-3 2-5 5-5h22c3 0 5 2 5 5v14c0 3-2 5-5 5H18l-6 5v-5h-2c-2 0-4-2-4-4V14z" stroke="url(#f3-g)" stroke-width="2" fill="none" />
+                <circle cx="16" cy="21" r="1.5" fill="url(#f3-g)" />
+                <circle cx="24" cy="21" r="1.5" fill="url(#f3-g)" />
+                <circle cx="32" cy="21" r="1.5" fill="url(#f3-g)" />
+                <path d="M14 28h20" stroke="url(#f3-g)" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Natural Language Processing</h3>
+            <p class="feature-card__text">
+              Machines understand, interpret, and generate human language —
+              enabling conversation, translation, summarization, and sentiment
+              analysis at scale.
+            </p>
+            <div class="feature-card__tag">Language as interface</div>
+          </article>
+
+          <article class="feature-card glass-card" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.1">
+            <div class="feature-card__index">04</div>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                <defs>
+                  <linearGradient id="f4-g" x1="0" y1="0" x2="48" y2="48">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <rect x="6" y="10" width="36" height="24" rx="3" stroke="url(#f4-g)" stroke-width="2" fill="none" />
+                <circle cx="17" cy="22" r="3" fill="url(#f4-g)" />
+                <path d="M9 32l8-8 6 6 8-10 10 12" stroke="url(#f4-g)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="14" y="36" width="20" height="2" fill="url(#f4-g)" />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Computer Vision</h3>
+            <p class="feature-card__text">
+              Computers analyze and interpret images and video — detecting
+              objects, reading expressions, navigating streets, and finding
+              tumors in medical scans.
+            </p>
+            <div class="feature-card__tag">Eyes that compute</div>
+          </article>
+
+          <article class="feature-card glass-card" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.1">
+            <div class="feature-card__index">05</div>
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="40" height="40" fill="none">
+                <defs>
+                  <linearGradient id="f5-g" x1="0" y1="0" x2="48" y2="48">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <circle cx="24" cy="24" r="16" stroke="url(#f5-g)" stroke-width="2" fill="none" />
+                <path d="M24 8v16l12 6" stroke="url(#f5-g)" stroke-width="2" fill="none" stroke-linecap="round" />
+                <circle cx="24" cy="24" r="3" fill="url(#f5-g)" />
+                <path d="M16 36l-4 6M32 36l4 6" stroke="url(#f5-g)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Automation</h3>
+            <p class="feature-card__text">
+              AI performs repetitive, time-consuming tasks with consistency,
+              speed, and accuracy — freeing humans to focus on creative,
+              strategic, and relational work.
+            </p>
+            <div class="feature-card__tag">Effortless repetition</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  REAL-WORLD APPLICATIONS                        -->
+    <!-- ============================================== -->
+    <section id="applications" class="section section--light" aria-labelledby="applications-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal>Real Impact</p>
+          <h2 id="applications-title" class="section__title reveal" data-reveal>
+            AI in the <span class="gradient-text">Real World</span>
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            From the hospital to the highway, AI is reshaping how industries
+            operate and how people experience the world.
+          </p>
+        </header>
+
+        <div class="applications-grid">
+          <article class="industry-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.12">
+            <div class="industry-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/healthcare-960.webp 960w, assets/photos/healthcare-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 400px" />
+                <img src="assets/photos/healthcare-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="industry-card__body">
+              <div class="industry-card__header">
+                <h3 class="industry-card__title">Healthcare</h3>
+                <p class="industry-card__subtitle">AI in clinical practice</p>
+              </div>
+              <ul class="industry-card__list">
+                <li><span class="dot"></span>Disease diagnosis &amp; early detection</li>
+                <li><span class="dot"></span>Medical imaging &amp; radiology</li>
+                <li><span class="dot"></span>Drug discovery &amp; genomics</li>
+                <li><span class="dot"></span>Robot-assisted surgery</li>
+                <li><span class="dot"></span>Personalized treatment plans</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.12">
+            <div class="industry-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/education-960.webp 960w, assets/photos/education-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 400px" />
+                <img src="assets/photos/education-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="industry-card__body">
+              <div class="industry-card__header">
+                <h3 class="industry-card__title">Education</h3>
+                <p class="industry-card__subtitle">Personalized learning at scale</p>
+              </div>
+              <ul class="industry-card__list">
+                <li><span class="dot"></span>Personalized learning paths</li>
+                <li><span class="dot"></span>Always-on AI tutors</li>
+                <li><span class="dot"></span>Automated grading &amp; feedback</li>
+                <li><span class="dot"></span>Smart classrooms</li>
+                <li><span class="dot"></span>Adaptive content recommendations</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.12">
+            <div class="industry-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/business-960.webp 960w, assets/photos/business-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 400px" />
+                <img src="assets/photos/business-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="industry-card__body">
+              <div class="industry-card__header">
+                <h3 class="industry-card__title">Business</h3>
+                <p class="industry-card__subtitle">Smarter decisions, faster</p>
+              </div>
+              <ul class="industry-card__list">
+                <li><span class="dot"></span>Customer service chatbots</li>
+                <li><span class="dot"></span>Marketing personalization</li>
+                <li><span class="dot"></span>Data analytics &amp; insights</li>
+                <li><span class="dot"></span>Sales prediction &amp; forecasting</li>
+                <li><span class="dot"></span>Process automation &amp; RPA</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.12">
+            <div class="industry-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/autonomous-960.webp 960w, assets/photos/autonomous-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 400px" />
+                <img src="assets/photos/autonomous-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="industry-card__body">
+              <div class="industry-card__header">
+                <h3 class="industry-card__title">Transportation</h3>
+                <p class="industry-card__subtitle">Roads reimagined</p>
+              </div>
+              <ul class="industry-card__list">
+                <li><span class="dot"></span>Self-driving vehicles</li>
+                <li><span class="dot"></span>Traffic optimization</li>
+                <li><span class="dot"></span>Route planning &amp; navigation</li>
+                <li><span class="dot"></span>Fleet management</li>
+                <li><span class="dot"></span>Predictive maintenance</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="industry-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.12">
+            <div class="industry-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/finance-960.webp 960w, assets/photos/finance-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 400px" />
+                <img src="assets/photos/finance-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div class="industry-card__body">
+              <div class="industry-card__header">
+                <h3 class="industry-card__title">Finance</h3>
+                <p class="industry-card__subtitle">Capital, intelligently deployed</p>
+              </div>
+              <ul class="industry-card__list">
+                <li><span class="dot"></span>Fraud detection</li>
+                <li><span class="dot"></span>Algorithmic trading</li>
+                <li><span class="dot"></span>Credit scoring</li>
+                <li><span class="dot"></span>AI banking assistants</li>
+                <li><span class="dot"></span>Risk assessment</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  BENEFITS — Animated counters                   -->
+    <!-- ============================================== -->
+    <section id="benefits" class="section section--dark" aria-labelledby="benefits-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal>The Upside</p>
+          <h2 id="benefits-title" class="section__title reveal" data-reveal>
+            Benefits &amp; <span class="gradient-text">Advantages</span>
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            AI doesn't just speed up what already exists — it unlocks new
+            capabilities and reshapes what individuals and organizations
+            can achieve.
+          </p>
+        </header>
+
+        <div class="benefits-grid">
+          <div class="benefit-card glass-card">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                <defs>
+                  <linearGradient id="b1" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <path d="M16 4l-3 9H4l7 5-3 9 8-5 8 5-3-9 7-5h-9l-3-9z" stroke="url(#b1)" stroke-width="2" fill="none" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="benefit-card__value">
+              <span data-counter="40" data-suffix="x">0</span>
+            </div>
+            <h3 class="benefit-card__title">Faster Decisions</h3>
+            <p class="benefit-card__text">
+              Models evaluate millions of options in seconds — outpacing
+              human deliberation in data-rich environments.
+            </p>
+          </div>
+
+          <div class="benefit-card glass-card">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                <defs>
+                  <linearGradient id="b2" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <path d="M4 26h24M6 22l6-10 5 7 4-5 5 8" stroke="url(#b2)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="6" cy="22" r="2" fill="url(#b2)" />
+                <circle cx="12" cy="12" r="2" fill="url(#b2)" />
+                <circle cx="17" cy="19" r="2" fill="url(#b2)" />
+                <circle cx="21" cy="14" r="2" fill="url(#b2)" />
+                <circle cx="26" cy="22" r="2" fill="url(#b2)" />
+              </svg>
+            </div>
+            <div class="benefit-card__value">
+              <span data-counter="35" data-suffix="%">0</span>
+            </div>
+            <h3 class="benefit-card__title">Higher Productivity</h3>
+            <p class="benefit-card__text">
+              Automation of routine work frees human time for creative,
+              strategic, and high-judgment tasks.
+            </p>
+          </div>
+
+          <div class="benefit-card glass-card">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                <defs>
+                  <linearGradient id="b3" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <circle cx="16" cy="16" r="12" stroke="url(#b3)" stroke-width="2" fill="none" />
+                <path d="M20 12c0-2-2-4-4-4s-4 2-4 4c0 4 8 4 8 8 0 2-2 4-4 4s-4-2-4-4" stroke="url(#b3)" stroke-width="2" fill="none" stroke-linecap="round" />
+                <path d="M16 4v4M16 24v4" stroke="url(#b3)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="benefit-card__value">
+              <span data-counter="30" data-suffix="%">0</span>
+            </div>
+            <h3 class="benefit-card__title">Cost Reduction</h3>
+            <p class="benefit-card__text">
+              Fewer errors, less manual labor, optimized operations —
+              measurable savings across the enterprise.
+            </p>
+          </div>
+
+          <div class="benefit-card glass-card">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                <defs>
+                  <linearGradient id="b4" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <circle cx="16" cy="16" r="12" stroke="url(#b4)" stroke-width="2" fill="none" />
+                <circle cx="12" cy="14" r="1" fill="url(#b4)" />
+                <circle cx="20" cy="14" r="1" fill="url(#b4)" />
+                <path d="M11 20c2 2 8 2 10 0" stroke="url(#b4)" stroke-width="2" fill="none" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="benefit-card__value">
+              <span data-counter="24" data-suffix="/7">0</span>
+            </div>
+            <h3 class="benefit-card__title">Better Experience</h3>
+            <p class="benefit-card__text">
+              Personalization, instant support, predictive service — every
+              customer interaction tuned to the individual.
+            </p>
+          </div>
+
+          <div class="benefit-card glass-card">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                <defs>
+                  <linearGradient id="b5" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <rect x="4" y="10" width="24" height="14" rx="2" stroke="url(#b5)" stroke-width="2" fill="none" />
+                <circle cx="10" cy="17" r="1.5" fill="url(#b5)" />
+                <circle cx="16" cy="17" r="1.5" fill="url(#b5)" />
+                <circle cx="22" cy="17" r="1.5" fill="url(#b5)" />
+                <path d="M8 8v2M16 6v4M24 8v2" stroke="url(#b5)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="benefit-card__value">
+              <span data-counter="100" data-suffix="%">0</span>
+            </div>
+            <h3 class="benefit-card__title">Smart Automation</h3>
+            <p class="benefit-card__text">
+              End-to-end workflows that perceive, decide, and act — without
+              handoffs, queues, or manual intervention.
+            </p>
+          </div>
+
+          <div class="benefit-card glass-card">
+            <div class="benefit-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+                <defs>
+                  <linearGradient id="b6" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <circle cx="16" cy="16" r="12" stroke="url(#b6)" stroke-width="2" fill="none" />
+                  <path d="M4 16h24M16 4c4 4 4 20 0 24M16 4c-4 4-4 20 0 24" stroke="url(#b6)" stroke-width="2" fill="none" />
+              </svg>
+            </div>
+            <div class="benefit-card__value">
+              <span data-counter="8" data-suffix="B">0</span>
+            </div>
+            <h3 class="benefit-card__title">Global Accessibility</h3>
+            <p class="benefit-card__text">
+              Translation, voice, assistive tech, low-cost expertise — AI
+              narrows distance, language, and ability barriers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  CHALLENGES & RISKS                             -->
+    <!-- ============================================== -->
+    <section id="challenges" class="section section--dark section--warning" aria-labelledby="challenges-title">
+      <div class="warning-bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow reveal" data-reveal>The Other Side</p>
+          <h2 id="challenges-title" class="section__title reveal" data-reveal>
+            Challenges &amp; <span class="gradient-text">Risks</span>
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            Every powerful technology carries weight. AI demands we think
+            carefully about security, fairness, autonomy, and consequence.
+          </p>
+        </header>
+
+        <div class="challenges-grid">
+          <article class="challenge-card">
+            <div class="challenge-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                <path d="M16 4l10 4v8c0 7-5 11-10 12-5-1-10-5-10-12V8l10-4z" stroke="#ef4444" stroke-width="2" fill="none" stroke-linejoin="round" />
+                <path d="M16 12v6M16 22v0.5" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Security Risks</h3>
+            <p class="challenge-card__text">
+              Adversarial attacks, automated cyber weapons, deepfakes, and
+              the misuse of AI by malicious actors amplify existing threats.
+            </p>
+            <div class="challenge-card__items">
+              <span class="challenge-chip">Adversarial attacks</span>
+              <span class="challenge-chip">Deepfakes</span>
+              <span class="challenge-chip">Autonomous malware</span>
+            </div>
+          </article>
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                <path d="M6 16V11a10 10 0 0120 0v5" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round" />
+                <rect x="5" y="16" width="6" height="10" rx="1.5" stroke="#f59e0b" stroke-width="2" fill="none" />
+                <rect x="21" y="16" width="6" height="10" rx="1.5" stroke="#f59e0b" stroke-width="2" fill="none" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Privacy Issues</h3>
+            <p class="challenge-card__text">
+              Vast data collection powers modern AI — but surveillance,
+              data leaks, and consent gaps create real risks to personal
+              freedom.
+            </p>
+            <div class="challenge-card__items">
+              <span class="challenge-chip">Mass surveillance</span>
+              <span class="challenge-chip">Data leaks</span>
+              <span class="challenge-chip">Consent gaps</span>
+            </div>
+          </article>
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                <circle cx="16" cy="16" r="12" stroke="#a855f7" stroke-width="2" fill="none" />
+                <path d="M16 8v8l5 3" stroke="#a855f7" stroke-width="2" fill="none" stroke-linecap="round" />
+                <path d="M4 16h2M26 16h2M16 4v2M16 26v2" stroke="#a855f7" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Ethical Concerns</h3>
+            <p class="challenge-card__text">
+              Bias encoded in training data, opaque decisions, and uneven
+              access demand frameworks for fairness, accountability, and
+              transparency.
+            </p>
+            <div class="challenge-card__items">
+              <span class="challenge-chip">Algorithmic bias</span>
+              <span class="challenge-chip">Fairness</span>
+              <span class="challenge-chip">Accountability</span>
+            </div>
+          </article>
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                <circle cx="16" cy="11" r="5" stroke="#22d3ee" stroke-width="2" fill="none" />
+                <path d="M6 26c0-5 5-9 10-9s10 4 10 9" stroke="#22d3ee" stroke-width="2" fill="none" stroke-linecap="round" />
+                <path d="M22 22l4 4M22 26l4-4" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Employment Impact</h3>
+            <p class="challenge-card__text">
+              Automation replaces repetitive and routine jobs — creating
+              displacement, while generating new roles that require
+              reskilling and adaptation.
+            </p>
+            <div class="challenge-card__items">
+              <span class="challenge-chip">Job displacement</span>
+              <span class="challenge-chip">Reskilling</span>
+              <span class="challenge-chip">Transition support</span>
+            </div>
+          </article>
+
+          <article class="challenge-card">
+            <div class="challenge-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                <rect x="4" y="6" width="24" height="18" rx="2" stroke="#6366f1" stroke-width="2" fill="none" />
+                <path d="M4 10h24" stroke="#6366f1" stroke-width="2" />
+                <path d="M10 28h12" stroke="#6366f1" stroke-width="2" stroke-linecap="round" />
+                <path d="M8 16h4M8 20h6" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="challenge-card__title">Cost &amp; Infrastructure</h3>
+            <p class="challenge-card__text">
+              Cutting-edge models require massive compute, energy, and
+              talent. Building, training, and maintaining AI systems is
+              expensive and concentrated.
+            </p>
+            <div class="challenge-card__items">
+              <span class="challenge-chip">Compute cost</span>
+              <span class="challenge-chip">Energy use</span>
+              <span class="challenge-chip">Talent scarcity</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  AI AROUND US — Pinned city illustration        -->
+    <!-- ============================================== -->
+    <section id="around-us" class="section section--dark" aria-labelledby="around-us-title">
+      <div class="container">
+        <header class="section__header section__header--center">
+          <p class="section__eyebrow reveal" data-reveal>Already Here</p>
+          <h2 id="around-us-title" class="section__title reveal" data-reveal>
+            AI <span class="gradient-text">Around Us</span>
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            You interact with AI dozens of times a day — often without
+            noticing. The city that runs on intelligence is the city you
+            already live in.
+          </p>
+        </header>
+
+        <div class="city-wrap">
+          <figure class="city city--photo" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/photos/smartcity-960.webp 960w, assets/photos/smartcity-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 1100px" />
+              <img src="assets/photos/smartcity-1920.jpg" alt="Smart city skyline at night with light trails" loading="lazy" decoding="async" />
+            </picture>
+            <div class="city-overlay" aria-hidden="true"></div>
+          </figure>
+
+          <div class="city-services">
+            <div class="service-chip" data-service="phones">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="1.6" />
+                  <line x1="10" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Smartphones</div>
+            </div>
+            <div class="service-chip" data-service="netflix">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6" />
+                  <path d="M3 10h18" stroke="currentColor" stroke-width="1.6" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Netflix</div>
+            </div>
+            <div class="service-chip" data-service="youtube">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.6" />
+                  <path d="M10 9l5 3-5 3z" fill="currentColor" />
+                </svg>
+              </div>
+              <div class="service-chip__text">YouTube</div>
+            </div>
+            <div class="service-chip" data-service="maps">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <path d="M12 2c-4 0-7 3-7 7 0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" stroke-width="1.6" />
+                  <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Google Maps</div>
+            </div>
+            <div class="service-chip" data-service="voice">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <rect x="9" y="3" width="6" height="12" rx="3" stroke="currentColor" stroke-width="1.6" />
+                  <path d="M5 12a7 7 0 0014 0M12 19v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Voice Assistants</div>
+            </div>
+            <div class="service-chip" data-service="shopping">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <path d="M5 7h14l-1.5 12a2 2 0 01-2 1.7H8.5a2 2 0 01-2-1.7L5 7z" stroke="currentColor" stroke-width="1.6" />
+                  <path d="M9 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.6" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Online Shopping</div>
+            </div>
+            <div class="service-chip" data-service="banking">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <path d="M3 9l9-5 9 5v2H3V9z" stroke="currentColor" stroke-width="1.6" />
+                  <path d="M5 12v6M9 12v6M15 12v6M19 12v6M3 20h18" stroke="currentColor" stroke-width="1.6" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Banking</div>
+            </div>
+            <div class="service-chip" data-service="health">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <path d="M12 4l-3 4H5l2 5-2 5h4l3 4 3-4h4l-2-5 2-5h-4l-3-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Healthcare</div>
+            </div>
+            <div class="service-chip" data-service="edu">
+              <div class="service-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                  <path d="M3 8l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                  <path d="M7 11v5c0 1 3 2 5 2s5-1 5-2v-5" stroke="currentColor" stroke-width="1.6" />
+                </svg>
+              </div>
+              <div class="service-chip__text">Education</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  TIMELINE — Horizontal scroll                   -->
+    <!-- ============================================== -->
+    <section id="timeline" class="section section--light timeline-section" aria-labelledby="timeline-title">
+      <div class="container container--wide">
+        <header class="section__header section__header--center">
+          <p class="section__eyebrow reveal" data-reveal>The History</p>
+          <h2 id="timeline-title" class="section__title reveal" data-reveal>
+            Timeline of <span class="gradient-text">AI</span>
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            Seven decades of breakthroughs — from a single question
+            ("Can machines think?") to a technology reshaping every
+            industry.
+          </p>
+        </header>
+
+        <div class="timeline-pin" id="timelinePin">
+          <div class="timeline-track">
+            <div class="timeline-progress" id="timelineProgress" aria-hidden="true"></div>
+
+            <article class="timeline-item" data-year="1950">
+              <div class="timeline-item__year">1950</div>
+              <div class="timeline-item__photo" aria-hidden="true">
+                <picture>
+                  <source type="image/webp" srcset="assets/photos/the-turing-test.jpg 960w, assets/photos/the-turing-test.jpg 1920w" sizes="340px" />
+                  <img src="assets/photos/the-turing-test.jpg" alt="" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="timeline-item__card">
+                <h3 class="timeline-item__title">The Turing Test</h3>
+                <p class="timeline-item__text">
+                  Alan Turing publishes "Computing Machinery and Intelligence,"
+                  asking whether machines can think — and proposing an
+                  imitation game to test it.
+                </p>
+                <div class="timeline-item__chip">Foundations</div>
+              </div>
+            </article>
+
+            <article class="timeline-item" data-year="1956">
+              <div class="timeline-item__year">1956</div>
+              <div class="timeline-item__photo" aria-hidden="true">
+                <picture>
+                  <source type="image/webp" srcset="assets/photos/birth-of-ai.webp 960w, assets/photos/birth-of-ai.webp 1920w" sizes="340px" />
+                  <img src="assets/photos/birth-of-ai.webp" alt="" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="timeline-item__card">
+                <h3 class="timeline-item__title">Birth of AI</h3>
+                <p class="timeline-item__text">
+                  The Dartmouth Conference coins the term "Artificial
+                  Intelligence" and launches the field as a serious
+                  academic discipline.
+                </p>
+                <div class="timeline-item__chip">Origins</div>
+              </div>
+            </article>
+
+            <article class="timeline-item" data-year="1980">
+              <div class="timeline-item__year">1980s</div>
+              <div class="timeline-item__photo" aria-hidden="true">
+                <picture>
+                  <source type="image/webp" srcset="assets/photos/expert-system.jpg 960w, assets/photos/expert-system.jpg 1920w" sizes="340px" />
+                  <img src="assets/photos/expert-system.jpg" alt="" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="timeline-item__card">
+                <h3 class="timeline-item__title">Expert Systems</h3>
+                <p class="timeline-item__text">
+                  Rule-based systems capture specialized human knowledge,
+                  power medical, financial, and industrial applications,
+                  and bring AI into the enterprise.
+                </p>
+                <div class="timeline-item__chip">Industry</div>
+              </div>
+            </article>
+
+            <article class="timeline-item" data-year="1997">
+              <div class="timeline-item__year">1997</div>
+              <div class="timeline-item__photo" aria-hidden="true">
+                <picture>
+                  <source type="image/webp" srcset="assets/photos/chess-960.webp 960w, assets/photos/chess-1920.webp 1920w" sizes="340px" />
+                  <img src="assets/photos/chess-1920.jpg" alt="" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="timeline-item__card">
+                <h3 class="timeline-item__title">Deep Blue Wins</h3>
+                <p class="timeline-item__text">
+                  IBM's Deep Blue defeats world chess champion Garry
+                  Kasparov — a watershed moment for machine intelligence
+                  in public consciousness.
+                </p>
+                <div class="timeline-item__chip">Milestone</div>
+              </div>
+            </article>
+
+            <article class="timeline-item" data-year="2012">
+              <div class="timeline-item__year">2012</div>
+              <div class="timeline-item__photo" aria-hidden="true">
+                <picture>
+                  <source type="image/webp" srcset="assets/photos/deep-learning.jpg 960w, assets/photos/deep-learning.jpg 1920w" sizes="340px" />
+                  <img src="assets/photos/deep-learning.jpg" alt="" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="timeline-item__card">
+                <h3 class="timeline-item__title">Deep Learning Revolution</h3>
+                <p class="timeline-item__text">
+                  AlexNet wins ImageNet by a wide margin using deep
+                  convolutional neural networks — igniting the modern
+                  deep-learning era.
+                </p>
+                <div class="timeline-item__chip">Renaissance</div>
+              </div>
+            </article>
+
+            <article class="timeline-item" data-year="2022">
+              <div class="timeline-item__year">2022</div>
+              <div class="timeline-item__photo" aria-hidden="true">
+                <picture>
+                  <source type="image/webp" srcset="assets/photos/generative-ai.webp 960w, assets/photos/generative-ai.webp 1920w" sizes="340px" />
+                  <img src="assets/photos/generative-ai.webp" alt="" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="timeline-item__card">
+                <h3 class="timeline-item__title">Generative AI Boom</h3>
+                <p class="timeline-item__text">
+                  Large language models and diffusion models reach the
+                  mainstream — text, image, audio, and code generation
+                  become everyday tools.
+                </p>
+                <div class="timeline-item__chip">Mainstream</div>
+              </div>
+            </article>
+
+            <article class="timeline-item timeline-item--future" data-year="future">
+              <div class="timeline-item__year">Future</div>
+              <div class="timeline-item__photo" aria-hidden="true">
+                <picture>
+                  <source type="image/webp" srcset="assets/photos/agi.webp 960w, assets/photos/agi.webp 1920w" sizes="340px" />
+                  <img src="assets/photos/agi.webp" alt="" loading="lazy" decoding="async" />
+                </picture>
+              </div>
+              <div class="timeline-item__card timeline-item__card--future">
+                <h3 class="timeline-item__title">AGI &amp; Beyond</h3>
+                <p class="timeline-item__text">
+                  The horizon: Artificial General Intelligence — systems
+                  that reason, learn, and adapt across every domain a
+                  human can.
+                </p>
+                <div class="timeline-item__chip timeline-item__chip--future">Horizon</div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="timeline-hint" aria-hidden="true">
+          <span>Scroll horizontally</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  FUTURE OF AI                                   -->
+    <!-- ============================================== -->
+    <section id="future" class="section section--dark" aria-labelledby="future-title">
+      <div class="container">
+        <header class="section__header section__header--center">
+          <p class="section__eyebrow reveal" data-reveal>What Comes Next</p>
+          <h2 id="future-title" class="section__title reveal" data-reveal>
+            The <span class="gradient-text">Future</span> of AI
+          </h2>
+          <p class="section__lede reveal" data-reveal>
+            Intelligence is becoming infrastructure. The next decade will
+            touch every domain where curiosity meets capability.
+          </p>
+        </header>
+
+        <div class="future-grid">
+            <article class="future-card glass-card" data-float>
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/robotics.jpg 960w, assets/photos/robotics.jpg 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/robotics.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Robotics</h3>
+            <p>Embodied AI moving from factories into homes and streets.</p>
+          </article>
+
+          <article class="future-card future-card--photo glass-card" data-float data-float-delay="0.4s">
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/space-960.webp 960w, assets/photos/space-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/space-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Space Exploration</h3>
+            <p>Autonomous rovers, mission planning, and cosmic discovery.</p>
+          </article>
+
+          <article class="future-card glass-card" data-float data-float-delay="0.8s">
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/climate-change.webp 960w, assets/photos/climate-change.webp 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/climate-change.webp" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Climate Change</h3>
+            <p>Modeling earth systems, optimizing energy, predicting impacts.</p>
+          </article>
+
+          <article class="future-card future-card--photo glass-card" data-float data-float-delay="1.2s">
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/healthcare-960.webp 960w, assets/photos/healthcare-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/healthcare-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Healthcare Innovation</h3>
+            <p>Precision medicine, early detection, accelerated cures.</p>
+          </article>
+
+          <article class="future-card future-card--photo glass-card" data-float data-float-delay="0.2s">
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/autonomous-960.webp 960w, assets/photos/autonomous-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/autonomous-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Autonomous Vehicles</h3>
+            <p>Roads redesigned around safety, efficiency, and freedom.</p>
+          </article>
+
+          <article class="future-card future-card--photo glass-card" data-float data-float-delay="0.6s">
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/science-960.webp 960w, assets/photos/science-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/science-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Scientific Discovery</h3>
+            <p>From materials to medicine, accelerating the pace of insight.</p>
+          </article>
+
+          <article class="future-card future-card--photo glass-card" data-float data-float-delay="1.0s">
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/smartcity-960.webp 960w, assets/photos/smartcity-1920.webp 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/smartcity-1920.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Smart Cities</h3>
+            <p>Energy, transport, services orchestrated by ambient intelligence.</p>
+          </article>
+
+          <article class="future-card glass-card future-card--accent" data-float data-float-delay="1.4s">
+            <div class="future-card__photo" aria-hidden="true">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/human-ai.jpg 960w, assets/photos/human-ai.jpg 1920w" sizes="(max-width: 768px) 100vw, 200px" />
+                <img src="assets/photos/human-ai.jpg" alt="" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <h3>Human-AI Collaboration</h3>
+            <p>The future is not AI replacing humans — it's AI working <em>with</em> humans.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!--  FINALE — Thank You                             -->
+    <!-- ============================================== -->
+    <section id="finale" class="finale" aria-labelledby="finale-title">
+      <div class="finale__stars" aria-hidden="true">
+        <canvas id="finaleStars"></canvas>
+      </div>
+
+      <div class="finale__content">
+        <p class="finale__eyebrow reveal" data-reveal>The End of the Journey</p>
+        <h1 id="finale-title" class="finale__title reveal-line" data-reveal-line>
+          <span class="finale__title-word">Thank</span>
+          <span class="finale__title-word finale__title-word--gradient">You</span>
+        </h1>
+        <p class="finale__subtitle reveal" data-reveal>
+          Artificial Intelligence is transforming our world.
+        </p>
+        <p class="finale__quote reveal" data-reveal>
+          <span class="finale__quote-mark" aria-hidden="true">&ldquo;</span>
+          The future is not AI replacing humans.
+          <br />
+          The future is AI working with humans.
+          <span class="finale__quote-mark" aria-hidden="true">&rdquo;</span>
+        </p>
+        <div class="finale__actions reveal" data-reveal>
+          <a href="#hero" class="btn btn--primary">
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true">
+              <path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Back to Top</span>
+          </a>
+        </div>
+        <p class="finale__signature reveal" data-reveal>
+          Continue learning. Stay curious. <span class="gradient-text">Powered by Human Creativity + AI.</span><br/>
+          
+          <ul><li>GROUP 1</li>
+            <li>B A G U Y O , F E L I X B E R T O  J R . 
+            </li><li> A L I M A N - G O , M A . S I E M A E </li><li>A N D R A D E , J O M A N U E L</li>
+            </ul>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================== -->
+  <!--  FOOTER                                         -->
+  <!-- ============================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container container--wide">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#hero" class="nav-brand" aria-label="AI Home">
+            <span class="nav-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <defs>
+                  <linearGradient id="footg" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#6366f1" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="12" r="10" stroke="url(#footg)" stroke-width="1.5" />
+                <circle cx="12" cy="12" r="3" fill="url(#footg)" />
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="url(#footg)" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span class="nav-brand__text">Artificial Intelligence</span>
+          </a>
+          <p class="footer__tagline">
+            The Brain of Modern Technology — a cinematic educational
+            experience exploring how machines learned to think.
+          </p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer">
+          <div class="footer__col">
+            <h4>Explore</h4>
+            <a href="#what-is-ai">What is AI</a>
+            <a href="#how-ai-works">How it Works</a>
+            <a href="#features">Features</a>
+            <a href="#applications">Applications</a>
+          </div>
+          <div class="footer__col">
+            <h4>Context</h4>
+            <a href="#benefits">Benefits</a>
+            <a href="#challenges">Challenges</a>
+            <a href="#around-us">Around Us</a>
+            <a href="#timeline">Timeline</a>
+          </div>
+          <div class="footer__col">
+            <h4>Beyond</h4>
+            <a href="#future">Future</a>
+            <a href="#finale">Closing</a>
+            <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener noreferrer">Learn more ↗</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__attribution">
+          <strong>Visual assets on this website are a blend of AI-generated imagery, royalty-free stock photos from Pexels, and code-generated visuals (SVG, CSS, Three.js) for educational purposes.</strong> The 3D brain, neural networks, data flows, hero and concept illustrations are AI-generated. Industry applications, smart city, space, and other section imagery are from <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer" style="color: var(--indigo-400); text-decoration: underline;">Pexels</a> (free for commercial and educational use). Icons, diagrams, ambient effects, and the 3D brain are hand-coded. No copyrighted images used.
+        </p>
+        <p class="footer__meta">
+          © <span id="year"></span> AI Educational Experience ·
+          Built with HTML, CSS, JavaScript, GSAP, Lenis, and Three.js
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!--  SCRIPTS                                        -->
+  <!-- ============================================== -->
+  <script src="js/three-scene.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
