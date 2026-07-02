@@ -787,6 +787,7 @@ ol {
 .hero__title-line {
   display: block;
   overflow: hidden;
+  line-height: 1.25;
 }
 
 .hero__title-word {
